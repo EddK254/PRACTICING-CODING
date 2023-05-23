@@ -1,0 +1,5 @@
+setenv: setenv
+    This sets environment variable values
+
+    Exit Status:
+    Returns success unless given invalid option.

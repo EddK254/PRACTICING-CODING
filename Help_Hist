@@ -1,0 +1,8 @@
+history: history
+    History list displayed and/ manipulated
+
+    History list with line numbers displayed, and each modified
+    entry is prefixed with a `*'. N lists argument only lists last N entries.
+
+    Exit Status:
+    Returns success unless given invalid option or error.

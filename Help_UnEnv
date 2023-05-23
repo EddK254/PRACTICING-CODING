@@ -1,0 +1,9 @@
+unsetenv: unsetenv
+    This removes each NAME from defined environment variables list.
+
+    Options:
+      NONE. None Whatsoever
+
+
+      No...
+    Return success unless NAME is not existing alias
