@@ -19,7 +19,7 @@ int inputvalidator(char **buf, int fd)
 {
 	char *newbuf, *bufgl, *bufptr = *buf;
 	ssize_t lenr;
-	size_t lenbuf;
+	size_t senbuf;
 	int start = 1;
 	int complete = 0;
 
@@ -192,11 +192,11 @@ int inputvalidator(char **buf, int fd)
 		{
 			; /* do something here if getline fails */
 		}
-		lenbuf = strlen(*buf);
-		newbuf = malloc(lenbuf + lenr + 1);
+		senbuf = strlen(*buf);
+		newbuf = malloc(senbuf + lenr + 1);
 		/* check malloc fail here */
 		strcpy(newbuf, *buf);
-		strcpy(newbuf + lenbuf, bufgl);
+		strcpy(newbuf + senbuf, bufgl);
 		free(*buf);
 		free(bufgl);
 #ifdef DEBUGVALID

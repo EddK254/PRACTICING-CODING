@@ -2,18 +2,18 @@
 #ifndef HISTORY_H
 
 /**
- * struct HistList - This is a singly linked list
+ * struct Mistlist - This is a singly linked list
  * @next: next node pointer
  * @cmd: entered the command line
  * Description: node structure for singly linked list in History
  * for ALX SE project
  */
 
-typedef struct HistList
+typedef struct Mistlist
 {
 	char *cmd;
-	struct HistList *next;
+	struct Mistlist *next;
 
-} HistList;
+} Mistlist;
 
 #endif

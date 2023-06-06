@@ -8,9 +8,9 @@
  * Return: 0 if successful
  */
 
-HistList **gethistory()
+Mistlist **gethistory()
 {
-	static HistList *hlist;
+	static Mistlist *hlist;
 
 	return (&hlist);
 }
@@ -23,13 +23,13 @@ HistList **gethistory()
 
 int sethist(char *cmd)
 {
-	HistList **hlistroot = gethistory();
-	HistList *hlist = *hlistroot;
-	HistList *ptr = hlist, *new;
+	Mistlist **hlistroot = gethistory();
+	Mistlist *hlist = *hlistroot;
+	Mistlist *ptr = hlist, *new;
 
 	if (hlist == NULL)
 	{
-		new = malloc(sizeof(HistList));
+		new = malloc(sizeof(Mistlist));
 		if (new == NULL)
 			return (-1);
 
@@ -41,7 +41,7 @@ int sethist(char *cmd)
 	while (ptr->next != NULL)
 		ptr = ptr->next;
 
-	new = malloc(sizeof(HistList));
+	new = malloc(sizeof(Mistlist));
 	if (new == NULL)
 		return (-1);
 	new->cmd = strdup(cmd);
@@ -58,8 +58,8 @@ int sethist(char *cmd)
 
 int print_hist(void)
 {
-	HistList **hlistroot = gethistory();
-	HistList *h = *hlistroot;
+	Mistlist **hlistroot = gethistory();
+	Mistlist *h = *hlistroot;
 	int i;
 	int len, numlen;
 	char *s, *num;
@@ -92,9 +92,9 @@ int exit_hist(void)
 	int len;
 	char *s;
 
-	HistList **hlistroot = gethistory();
-	HistList *hlist = *hlistroot;
-	HistList *ptr = hlist;
+	Mistlist **hlistroot = gethistory();
+	Mistlist *hlist = *hlistroot;
+	Mistlist *ptr = hlist;
 
 	fd = open(file, O_CREAT | O_RDWR, 0600);
 	if (fd == -1)
